@@ -5,7 +5,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Rating from '@mui/material/Rating';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { styled } from '@mui/material/styles';
-
+/////Api key ------ AIzaSyAxo2KYzbgeRf_PS74a3Z3P6wEhOldYhno
+////https://console.cloud.google.com/google/maps-apis/credentials?project=zahratraveladvisor
 
 
 ///style 
@@ -28,9 +29,11 @@ const Map = () => {
     const coordinates = { lat: 0, lng: 0};
     return (
         <MapContainer>
+            {/*33min google map create 
+            maps javascript api */}
             <GoogleMapReact
-            bootstrapURLKeys={{ key: ''}}
-            defaultCenter={coords}
+            bootstrapURLKeys={{ key: 'AIzaSyAxo2KYzbgeRf_PS74a3Z3P6wEhOldYhno'}}
+            defaultCenter={coordinates}
             center={coordinates}
             defaultZoom={14}
             margin={[50, 50, 50,50]}
