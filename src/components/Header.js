@@ -8,6 +8,8 @@ import { styled, alpha } from '@mui/material/styles';
 ///import { Autocomplete } from '@react-google-maps/api';
 
 ////style
+
+
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -50,10 +52,11 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
+  
 const Header = () => {
     return (
 <Box sx={{flexGrow: 1}}>
-    <AppBar position="static">
+    <AppBar position="static"   color="primary">
         <Toolbar >
         <IconButton
             size="large"
