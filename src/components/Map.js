@@ -23,22 +23,21 @@ const MapContainer = styled('div')(( ) => ({
   }));
 
 
-
-
-
-
-
-
-
-
-
-
-
 const Map = () => {
     const matches = useMediaQuery('(min-width:600px)');
+    const coordinates = { lat: 0, lng: 0};
     return (
         <MapContainer>
-            <GoogleMapReact>
+            <GoogleMapReact
+            bootstrapURLKeys={{ key: ''}}
+            defaultCenter={coords}
+            center={coordinates}
+            defaultZoom={14}
+            margin={[50, 50, 50,50]}
+            options={''}
+            onChange={''}
+            onChildClick={''}
+            >
                 <MarkerContainer>
                   <LocationOnIcon />
                   <Paper>
