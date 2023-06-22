@@ -6,11 +6,13 @@ import { createTheme } from '@mui/material/styles';
 
 ///style 
 const ListContainer = styled('div')(( ) => ({
-    
+    padding: '25px'
   }));
   
   const ListLoading = styled('div')(( ) => ({
-   
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center',
   }));
 
 
@@ -21,14 +23,14 @@ const List = () => {
 
 
     return (
-<ListContainer sx={{padding:'25px'}}>
+<ListContainer>
     <Typography> Restaurant, Cafes and Bars near you </Typography>
-    <ListLoading sx={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+    <ListLoading>
         <CircularProgress />
     </ListLoading>
     <FormControl  sx={{  margin: theme.spacing(1),  minWidth: 120, marginBottom: '30px', }}>
         <InputLabel>Type</InputLabel>
-        <Select id='type' >
+        <Select id='type' label='Type' >
             <MenuItem value="restaurants">Restaurants</MenuItem>
             <MenuItem value="hotels">Hotels</MenuItem>
             <MenuItem value="attractions">Attractions</MenuItem>
@@ -37,7 +39,7 @@ const List = () => {
     {/* */}
     <FormControl  sx={{  margin: theme.spacing(1),  minWidth: 120, marginBottom: '30px', }}>
         <InputLabel>Rating</InputLabel>
-        <Select id='rating' >
+        <Select id='rating' label='Rating' >
             <MenuItem value="All">All</MenuItem>
             <MenuItem value="3">Above 3.0</MenuItem>
             <MenuItem value="4">Above 4.0</MenuItem>
