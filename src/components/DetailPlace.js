@@ -1,18 +1,42 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material"
-
+import { Card, CardActions, CardContent, CardMedia,Box, Chip, Rating, Typography } from "@mui/material"
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 const DetailPlace = () => {
     return (
-<Card>
+<Card  elevation={6}>
     <CardMedia sx={{ height: 350 }}/>
     <CardContent>
-        <Typography>
+        <Typography  gutterBottom variant="h5">
             name
         </Typography>
         <Box display="flex" justifyContent="space-between" my={2}>
-
+            <Rating name="read-only" readOnly/>
+            <Typography component="legend"> review </Typography>
         </Box>
-
+        <Box display="flex" justifyContent="space-between">
+            <Typography component="legend">  Ranking  </Typography>
+            <Typography gutterBottom variant="subtitle1"> place ranking </Typography>
+        </Box>
+        <Box display="flex" justifyContent="space-between">
+            <Typography component="legend">Price</Typography>
+            <Typography gutterBottom variant="subtitle1"> price ranking </Typography>
+        </Box>
+        {/* */}
+        <Box display="flex" justifyContent="space-between" my={1} alignItems="center">
+            image
+            <Typography variant="subtitle2"> display name</Typography>
+        </Box>
+         {/* */}
+        <Chip/>
+         {/* */}
+         <Typography gutterBottom variant="body2" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '10px',}}>
+            <LocalPhoneIcon />
+            phone
+         </Typography>
     </CardContent>
+       {/* */}
+       <CardActions>
+
+       </CardActions>
 </Card>
     )
 }
