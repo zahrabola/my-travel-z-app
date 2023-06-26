@@ -1,13 +1,13 @@
 import { Card, CardActions, CardContent, CardMedia,Box, Chip, Rating, Typography, Button } from "@mui/material"
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
-const DetailPlace = () => {
+const DetailPlace = ({place}) => {
     return (
 <Card  elevation={6} sx={{margin:1, display:'inline-block'}}>
     <CardMedia sx={{ height: 350}}/>
     <CardContent>
         <Typography  gutterBottom variant="h5">
-            name
+            name {place.name}
         </Typography>
         <Box display="flex" justifyContent="space-between" my={2}>
             <Rating name="read-only" readOnly/>
