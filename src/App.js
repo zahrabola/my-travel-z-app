@@ -9,14 +9,28 @@ import {GetPlacesData} from './Data/TravelApi';
 
 
 function App() {
-const [locations, setLocations] = useState([]);
+const [places, setPlaces] = useState([]);
+const [coordinates, setCoordinates] = useState({}) /* empty object */
+const [bounds,   setBounds] = useState(null)
 
+
+/* useeffect happens at start to get loacation of user*/
+
+useEffect(() => {
+navigator.geolocation.getCurrentPosition(({
+  coordinates: {latitude, logitude}
+}) => {
+  setCoordinates({lat : latitude, lng : logitude});
+})
+}, []);
   /* useEffect for Travel and weather */
   useEffect( () => {
+    console.log(coordinates, bounds);
+    
     GetPlacesData()
     .then((data) => {
       console.log(data)
-setLocations(data)
+setPlaces(data)
     })
   }, []);
 
@@ -31,7 +45,11 @@ setLocations(data)
           <List />
           </Grid>
           <Grid item xs={12} md={8} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <Map />
+          <Map 
+          setCoordinates={setCoordinates}
+          setBounds={setBounds}
+          coordinates={coordinates}
+          />
           </Grid>
         </Grid>
       </React.Fragment>

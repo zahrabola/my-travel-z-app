@@ -43,7 +43,6 @@ try {
 export const GetPlacesData = async () => {
     try {
         const {data: {data}} = await axios.get(URLtravel, options);
-        console.log(response.data);
         return data;
     } catch (error) {
         console.error(error);

@@ -24,9 +24,9 @@ const MapContainer = styled('div')(( ) => ({
   }));
 
 
-const Map = () => {
-    const matches = useMediaQuery('(min-width:600px)');
-    const coordinates = { lat: 0, lng: 0};
+const Map = ({setCoordinates, setBounds,coordinates}) => {
+    const matchesmobile = useMediaQuery('(min-width:600px)');
+    ////const coordinates = { lat: 0, lng: 0};
     return (
         <MapContainer>
             {/*33min google map create 
@@ -38,7 +38,11 @@ const Map = () => {
             defaultZoom={14}
             margin={[50, 50, 50,50]}
             options={''}
-            onChange={''}
+            onChange={(event) => {
+              console.log(event)
+              setCoordinates({ lat:event.center.lat, lng: event.center.lng});
+              setBounds({ne:  event.marginBounds.ne, sw: event.marginBounds.sw })
+            }}
             onChildClick={''}
             >
                 <MarkerContainer>
