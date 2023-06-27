@@ -8,10 +8,31 @@ import axios from 'axios';
 const URLtravel = 'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary'
 
 
+
+export const GetPlacesData = async ( sw, ne ) => {
+    try {
+        const {data: {data}} = await axios.get(URLtravel, {
+          params: {
+            bl_latitude: sw.lat,
+            tr_latitude: ne.lat,
+            bl_longitude: sw.lng,
+            tr_longitude: ne.lng,
+          },
+          headers: {
+            'X-RapidAPI-Key': '8213bd53bbmsheef81f1d6808d94p1a2e3djsnc7301be69b83',
+            'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+          }
+        });
+       
+        return data;
+    } catch (error) {
+      console.log(error);
+    }
+}
 /*
 const options = {
   
-  from rapid api
+  from rapid apiTFUYF
   method: 'GET',
   url: 'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary', 
   params: {
@@ -42,23 +63,3 @@ try {
 	console.error(error);
 }*/
 /* async = in useeffect .then */
-export const GetPlacesData = async ( sw, ne ) => {
-    try {
-        const {data: {data}} = await axios.get(URLtravel, {
-          params: {
-            bl_latitude: sw.lat,
-            tr_latitude: ne.lat,
-            bl_longitude: sw.lang,
-            tr_longitude: ne.lang,
-          },
-          headers: {
-            'X-RapidAPI-Key': '8213bd53bbmsheef81f1d6808d94p1a2e3djsnc7301be69b83',
-            'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
-          }
-        });
-       
-        return data;
-    } catch (error) {
-        console.error(error);
-    }
-}

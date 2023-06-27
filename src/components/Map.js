@@ -1,8 +1,8 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import { Paper, Typography } from "@mui/material";
-import useMediaQuery from '@mui/material/useMediaQuery';
-import Rating from '@mui/material/Rating';
+//import useMediaQuery from '@mui/material/useMediaQuery';
+//import Rating from '@mui/material/Rating';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { styled } from '@mui/material/styles';
 /////Api key ------ AIzaSyAxo2KYzbgeRf_PS74a3Z3P6wEhOldYhno
@@ -25,7 +25,7 @@ const MapContainer = styled('div')(( ) => ({
 
 
 const Map = ({setCoordinates, setBounds,coordinates}) => {
-    const matchesmobile = useMediaQuery('(min-width:600px)');
+    ///const matchesmobile = useMediaQuery('(min-width:600px)');
     ////const coordinates = { lat: 0, lng: 0};
     return (
         <MapContainer>
@@ -43,7 +43,7 @@ const Map = ({setCoordinates, setBounds,coordinates}) => {
               setCoordinates({ lat:event.center.lat, lng: event.center.lng});
               setBounds({ne:  event.marginBounds.ne, sw: event.marginBounds.sw })
             }}
-            onChildClick={''}
+           
             >
                 <MarkerContainer>
                   <LocationOnIcon />

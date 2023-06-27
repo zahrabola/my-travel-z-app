@@ -15,24 +15,21 @@ const ListContainer = styled('div')(( ) => ({
     alignItems: 'center',
   }));
 
-
-
-
-const List = ({places}) => {
+const List = ({ places}) => {
     const theme = createTheme();
 
-const[type, setType]= useState('restaurants')
+const[type, setType]= useState('')
 const [rate, setRate] = useState('')
 
-/*dummy variable 
-const places = [
+
+/* const places = [
     {name: 'fun place'},
     {name: 'cool place'},
     {name: 'boring place'},
     {name: 'fun place'},
     {name: 'cool place'},
     {name: 'boring place'},
-] */
+]*/
 
     return (
 <ListContainer>
@@ -63,7 +60,7 @@ const places = [
 
        {places?.map((place, i) => (
         <Grid item xs={12} key={i}>
- <DetailPlace place={place} />
+ <DetailPlace place={place}  />
         </Grid>
        ))}
       </Grid>
