@@ -9,10 +9,15 @@ import {GetPlacesData} from './Data/TravelApi';
 
 
 function App() {
+const [locations, setLocations] = useState([]);
 
   /* useEffect for Travel and weather */
   useEffect( () => {
-    GetPlacesData();
+    GetPlacesData()
+    .then((data) => {
+      console.log(data)
+setLocations(data)
+    })
   }, []);
 
 

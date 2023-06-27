@@ -39,7 +39,7 @@ try {
 } catch (error) {
 	console.error(error);
 }*/
-
+/* async = in useeffect .then */
 export const GetPlacesData = async () => {
     try {
         const {data: {data}} = await axios.get(URLtravel, options);
