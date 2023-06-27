@@ -25,9 +25,7 @@ navigator.geolocation.getCurrentPosition(({
 }, []);
   /* useEffect for Travel and weather */
   useEffect( () => {
-    console.log(coordinates, bounds);
-    
-    GetPlacesData()
+    GetPlacesData(bounds.sw, bounds.ne)
     .then((data) => {
       console.log(data)
 setPlaces(data)
