@@ -1,13 +1,17 @@
 import { Card, CardActions, CardContent, CardMedia,Box, Chip, Rating, Typography, Button } from "@mui/material"
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-
+import AddLocationIcon from '@mui/icons-material/AddLocation';
+import MailIcon from '@mui/icons-material/Mail';
 const DetailPlace = ({place}) => {
     return (
 <Card  elevation={6} sx={{margin:1, display:'inline-block'}}>
-    <CardMedia sx={{ height: 350}}/>
+    <CardMedia sx={{ height: 350}}
+    image={place.photo}
+    title={place.name}
+    />
     <CardContent>
         <Typography  gutterBottom variant="h5">
-            name {place.name}
+         {place.name}
         </Typography>
         <Box display="flex" justifyContent="space-between" my={2}>
             <Rating name="read-only" readOnly/>
@@ -21,6 +25,10 @@ const DetailPlace = ({place}) => {
             <Typography component="legend">Price</Typography>
             <Typography gutterBottom variant="subtitle1"> price ranking </Typography>
         </Box>
+        <Box display="flex" justifyContent="space-between">
+            <Typography component="legend">Description</Typography>
+            <Typography gutterBottom variant="subtitle1"> description </Typography>
+        </Box>
         {/* */}
         <Box display="flex" justifyContent="space-between" my={1} alignItems="center">
             image
@@ -28,11 +36,21 @@ const DetailPlace = ({place}) => {
         </Box>
          {/* */}
         <Chip sx={{ margin: '5px 5px 5px 0'}}/>
+           {/* */}
+           <Typography gutterBottom variant="body2" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '10px',}}>
+            <AddLocationIcon />
+            adresss
+         </Typography>
          {/* */}
          <Typography gutterBottom variant="body2" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '10px',}}>
             <LocalPhoneIcon />
             phone
          </Typography>
+          {/* */}
+          <Typography gutterBottom variant="body2" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '10px',}}>
+            <MailIcon />
+            email
+         </Typography>   
     </CardContent>
        {/* */}
        <CardActions>

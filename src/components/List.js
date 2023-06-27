@@ -18,13 +18,13 @@ const ListContainer = styled('div')(( ) => ({
 
 
 
-const List = () => {
+const List = ({places}) => {
     const theme = createTheme();
 
 const[type, setType]= useState('restaurants')
 const [rate, setRate] = useState('')
 
-////dummy variable 
+/*dummy variable 
 const places = [
     {name: 'fun place'},
     {name: 'cool place'},
@@ -32,7 +32,7 @@ const places = [
     {name: 'fun place'},
     {name: 'cool place'},
     {name: 'boring place'},
-]
+] */
 
     return (
 <ListContainer>
