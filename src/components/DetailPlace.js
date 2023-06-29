@@ -14,7 +14,7 @@ import AddLocationIcon from "@mui/icons-material/AddLocation";
 import MailIcon from "@mui/icons-material/Mail";
 const DetailPlace = ({ place }) => {
   return (
-    <Card elevation={6} sx={{ margin: 1, display: "inline-block" }}>
+    <Card elevation={6} sx={{ margin: 1, display: "inline-block", minWidth: 300}}>
       <CardMedia
         sx={{ height: 350 }}
         image={
@@ -23,14 +23,15 @@ const DetailPlace = ({ place }) => {
             : "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg"
         } /* if statement images is api doesnt have a image */
         title={place.name}
+        alt="image"
       />
       <CardContent>
         <Typography gutterBottom variant="h5">
           {place.name}
         </Typography>
         <Box display="flex" justifyContent="space-between" my={2}>
-          <Rating name="read-only" readOnly />
-          <Typography component="legend"> review </Typography>
+          <Rating name="read-only" readOnly value={Number(place.rating)} />
+          <Typography component="legend">{place.num_reviews} reviews</Typography>
         </Box>
         <Box display="flex" justifyContent="space-between">
           <Typography component="legend"> Ranked: </Typography>
@@ -61,7 +62,7 @@ const DetailPlace = ({ place }) => {
             my={1}
             alignItems="center"
           >
-            <img src={award.images.small} />
+            <img src={award.images.small}  alt="imagetwo"/>
             <Typography variant="subtitle2"> {award.display_name}</Typography>
           </Box>
         ))}
