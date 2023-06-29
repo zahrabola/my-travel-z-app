@@ -71,7 +71,8 @@ const DetailPlace = ({ place }) => {
             <Chip sx={{ margin: "5px 5px 5px 0" }} key={name} label={name} />
         ))}
         {/* */}
-        <Typography
+        {place.address && (
+          <Typography
           gutterBottom
           variant="body2"
           sx={{
@@ -82,36 +83,44 @@ const DetailPlace = ({ place }) => {
           }}
         >
           <AddLocationIcon />
-          adresss
+          {place.address}
         </Typography>
+        )}
+        
         {/* */}
-        <Typography
-          gutterBottom
-          variant="body2"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: "10px",
-          }}
-        >
-          <LocalPhoneIcon />
-          phone
-        </Typography>
+        {place.phone &&(
+             <Typography
+             gutterBottom
+             variant="body2"
+             sx={{
+               display: "flex",
+               alignItems: "center",
+               justifyContent: "space-between",
+               marginTop: "10px",
+             }}
+           >
+             <LocalPhoneIcon />
+            {place.phone}
+           </Typography>
+        )}
+     
         {/* */}
-        <Typography
-          gutterBottom
-          variant="body2"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: "10px",
-          }}
-        >
-          <MailIcon />
-          email
-        </Typography>
+        {place.email && (
+            <Typography
+            gutterBottom
+            variant="body2"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              marginTop: "10px",
+            }}
+          >
+            <MailIcon />
+            {place.email}
+          </Typography>
+        )}
+      
       </CardContent>
       {/* */}
       <CardActions>
