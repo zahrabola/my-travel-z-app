@@ -14,7 +14,7 @@ import AddLocationIcon from "@mui/icons-material/AddLocation";
 import MailIcon from "@mui/icons-material/Mail";
 const DetailPlace = ({ place }) => {
   return (
-    <Card elevation={6} sx={{ margin: 1, display: "inline-block", minWidth: 300}}>
+    <Card elevation={6} sx={{ margin: 0.5, display: "inline-block", minWidth: 300}}>
       <CardMedia
         sx={{ height: 350 }}
         image={
@@ -53,6 +53,8 @@ const DetailPlace = ({ place }) => {
             {place.description}
           </Typography>
         </Box>
+  
+
 
         {/* */}
         {place?.awards?.map((award) => (
@@ -69,7 +71,7 @@ const DetailPlace = ({ place }) => {
 
         {/* */}
         {place?.cuisine?.map(({name}) => (
-            <Chip sx={{ margin: "5px 5px 5px 0" }} key={name} label={name} />
+            <Chip sx={{ margin: "5px 5px 5px 0" }} size="small" key={name} label={name} />
         ))}
         {/* */}
         {place.address && (
@@ -125,11 +127,11 @@ const DetailPlace = ({ place }) => {
       </CardContent>
       {/* */}
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={() => window.open(place.web_url, '_blank')}>
           {" "}
           Trip advisor
         </Button>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary"  onClick={() => window.open(place.website, '_blank')}>
           Website{" "}
         </Button>
       </CardActions>
